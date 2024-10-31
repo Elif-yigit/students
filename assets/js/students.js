@@ -1,3 +1,7 @@
+
+let kadinSayisi = 0;
+let erkekSayisi = 0;
+
 let students = [
   {
       id: 1,
@@ -91,12 +95,17 @@ let students = [
 
 const kadinListesi = document.querySelector('#kadinListesi');
 const erkekListesi = document.querySelector('#erkekListesi');
-
+const kadinSayisiToplam = document.querySelector('#kadinSayisiToplam');
+const erkekSayisiToplam = document.querySelector('#erkekSayisiToplam');
 for (let i=0; i<students.length; i++) {
 
-    if (students[i].gender === "Kadın") {
+    if (students[i].gender === "Kadın" ) {
+
+        kadinSayisi++;
+        kadinSayisiToplam.innerText = `Toplam Kadın Sayısı: ${kadinSayisi}`;
 
         // console.log(kadinListesi [i]);
+       
         
         kadinListesi.innerHTML += `  <li class="kadın">
         
@@ -105,16 +114,27 @@ for (let i=0; i<students.length; i++) {
         ${students[i].gender} ${students[i].section} ${students[i].role}
         
         </li>`;
+ 
+    
     } else {
         
-        console.log(erkekListesi);
+
+        erkekSayisi++;
+        erkekSayisiToplam.innerText = `Toplam Erkek Sayısı: ${erkekSayisi}  `;
+
+        // console.log(erkekListesi);
+        // console.log(erkekSayisi[i]);
         
-        erkekListesi.innerHTML += `<li class="erkek"> 
+        erkekListesi.innerHTML += ` <li class="erkek"> 
         ${students[i].name} ${students[i].lastname}
        
         ${students[i].gender} ${students[i].section} ${students[i].role}
         
-        </li>`
+        </li>`;
+
+        
         
     }
+   
+    
 }
